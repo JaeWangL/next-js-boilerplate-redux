@@ -16,6 +16,7 @@
   "parserOptions": {
     "project": ["./tsconfig.json"]
   },
+  "ignorePatterns": ["next.config.js"],
   "rules": {
     "prettier/prettier": "error",
     "react/function-component-definition": "off",
@@ -55,7 +56,7 @@
     "no-return-assign": "off",
     "no-param-reassign": ["error", {
       "props": true,
-      "ignorePropertyModificationsFor": ["prev"]
+      "ignorePropertyModificationsFor": ["prev", "state"]
     }],
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [

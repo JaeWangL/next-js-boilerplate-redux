@@ -1,0 +1,35 @@
+@import 'mixins';
+
+html {
+  font-size: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+button,
+input {
+  outline: none !important;
+  border: none;
+  box-shadow: none !important;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+textarea {
+  appearance: none !important;
+}

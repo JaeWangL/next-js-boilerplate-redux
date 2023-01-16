@@ -1,0 +1,15 @@
+@import '@styles/mixins';
+
+.Toastify__toast-container {
+  width: 420px !important;
+
+  @media only screen and (max-width: 480px) {
+    width: 100% !important;
+  }
+}
+
+.Toastify__toast-theme--dark {
+  margin: 6px 12px !important;
+  border-radius: 10px !important;
+  background: $natural-80 !important;
+}

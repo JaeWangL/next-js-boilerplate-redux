@@ -1,0 +1,19 @@
+@import '@styles/mixins';
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    font-size: 2.4rem;
+    font-weight: 600;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+
+  .button50 {
+    width: 50%;
+  }
+}
