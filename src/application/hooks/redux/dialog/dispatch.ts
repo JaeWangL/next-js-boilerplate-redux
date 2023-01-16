@@ -4,12 +4,12 @@ import { closeDialog, openDialog } from '@application/redux/dialog/slice';
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
-export interface DialogStore {
+export interface DialogDispatch {
   closeDialog: () => DialogActions;
   openDialog: (payload: OpenDialogPayload) => DialogActions;
 }
 
-export function useDialogStore(): DialogStore {
+export function useDialogDispatch(): DialogDispatch {
   const dispatch = useDispatch();
 
   const closeDialogDispatch = useCallback(

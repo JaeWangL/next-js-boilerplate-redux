@@ -1,9 +1,8 @@
-import { useDialogStore } from '@application/hooks/redux/dialog';
-import type { RootState } from '@application/redux/types';
+import { useDialogDispatch } from '@application/hooks/redux/dialog/dispatch';
+import { useDialogSelector } from '@application/hooks/redux/dialog/selector';
 import classNames from 'classnames';
 import { useCallback, useMemo } from 'react';
 import Modal, { type Styles } from 'react-modal';
-import { useSelector } from 'react-redux';
 import styles from './styles.module.scss';
 
 type DialogProviderProps = {
@@ -12,8 +11,8 @@ type DialogProviderProps = {
 
 export function DialogProvider(props: DialogProviderProps): JSX.Element {
   const { children } = props;
-  const dialog = useSelector((state: RootState) => state.dialog);
-  const { closeDialog } = useDialogStore();
+  const { dialog } = useDialogSelector();
+  const { closeDialog } = useDialogDispatch();
 
   const customStyles = useMemo((): Styles => {
     return {

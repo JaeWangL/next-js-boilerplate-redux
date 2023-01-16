@@ -4,11 +4,11 @@ import { setCurrentMenu } from '@application/redux/sideBar/slice';
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
-export interface SideBarStore {
+export interface SideBarDispatch {
   setCurrentMenu: (payload: SetCurrentMenuPayload) => SideBarActions;
 }
 
-export function useSideBarStore(): SideBarStore {
+export function useSideBarDispatch(): SideBarDispatch {
   const dispatch = useDispatch();
 
   const setCurrentMenuDispatch = useCallback(

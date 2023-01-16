@@ -1,9 +1,9 @@
-import { useSideBarStore } from '@application/hooks/redux/sideBar';
+import { useSideBarDispatch } from '@application/hooks/redux/sideBar/dispatch';
 import { memo } from 'react';
 import isEqual from 'react-fast-compare';
 
 function Toggle(): JSX.Element {
-  const { setCurrentMenu } = useSideBarStore();
+  const { setCurrentMenu } = useSideBarDispatch();
 
   return (
     <button
