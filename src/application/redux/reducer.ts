@@ -4,7 +4,7 @@ import { HYDRATE } from 'next-redux-wrapper';
 import { dialogName, dialogReducer } from './dialog/slice';
 import { sideBarName, sideBarReducer } from './sideBar/slice';
 
-export const rootReducer = combineReducers({
+const rootReducer = combineReducers({
   [dialogName]: dialogReducer,
   [sideBarName]: sideBarReducer,
 });
@@ -24,3 +24,5 @@ export const reducer = (
     }
   }
 };
+
+export type RootState = ReturnType<typeof rootReducer>;

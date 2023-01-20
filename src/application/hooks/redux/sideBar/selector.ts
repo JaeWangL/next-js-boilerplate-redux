@@ -1,13 +1,12 @@
 import type { SideBarState } from '@application/redux/sideBar/types';
-import type { RootState } from '@application/redux/types';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '../use_redux';
 
-export interface SideBarSelector {
+export type SideBarSelector = {
   sideBar: SideBarState;
-}
+};
 
 export function useSideBarSelector(): SideBarSelector {
-  const sideBar = useSelector((state: RootState) => state.sideBar);
+  const sideBar = useAppSelector((state) => state.sideBar);
 
   return {
     sideBar,

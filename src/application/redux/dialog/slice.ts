@@ -1,5 +1,4 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { HYDRATE } from 'next-redux-wrapper';
 import { GlobalStateNames } from '../constants';
 import type { OpenDialogPayload } from './payloads';
 import type { DialogState } from './types';
@@ -26,14 +25,6 @@ export const dialogSlice = createSlice({
       state.message = '';
       state.title = undefined;
       state.onOK = undefined;
-    },
-  },
-  extraReducers: {
-    [HYDRATE]: (state, action) => {
-      return {
-        ...state,
-        ...action.payload[GlobalStateNames.DIALOG],
-      };
     },
   },
 });

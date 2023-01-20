@@ -2,15 +2,15 @@ import type { OpenDialogPayload } from '@application/redux/dialog/payloads';
 import type { DialogActions } from '@application/redux/dialog/slice';
 import { closeDialog, openDialog } from '@application/redux/dialog/slice';
 import { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../use_redux';
 
-export interface DialogDispatch {
+export type DialogDispatch = {
   closeDialog: () => DialogActions;
   openDialog: (payload: OpenDialogPayload) => DialogActions;
-}
+};
 
 export function useDialogDispatch(): DialogDispatch {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const closeDialogDispatch = useCallback(
     () => dispatch(closeDialog()),

@@ -1,13 +1,12 @@
 import type { DialogState } from '@application/redux/dialog/types';
-import type { RootState } from '@application/redux/types';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '../use_redux';
 
-export interface DialogSelector {
+export type DialogSelector = {
   dialog: DialogState;
-}
+};
 
 export function useDialogSelector(): DialogSelector {
-  const dialog = useSelector((state: RootState) => state.dialog);
+  const dialog = useAppSelector((state) => state.dialog);
 
   return {
     dialog,

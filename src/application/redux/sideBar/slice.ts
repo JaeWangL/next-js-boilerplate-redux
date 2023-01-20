@@ -1,5 +1,4 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { HYDRATE } from 'next-redux-wrapper';
 import { GlobalStateNames } from '../constants';
 import { sideBarMenu } from './constants';
 import type { SetCurrentMenuPayload } from './payloads';
@@ -15,14 +14,6 @@ export const sideBarSlice = createSlice({
   reducers: {
     setCurrentMenu(state, { payload }: PayloadAction<SetCurrentMenuPayload>) {
       state.currentMenu = payload.currentMenu;
-    },
-  },
-  extraReducers: {
-    [HYDRATE]: (state, action) => {
-      return {
-        ...state,
-        ...action.payload[GlobalStateNames.SIDE_BAR],
-      };
     },
   },
 });
